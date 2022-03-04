@@ -1,17 +1,12 @@
+//setup from https://pragmaticstudio.com/tutorials/adding-tailwind-css-to-phoenix
 
 module.exports = {
-  mode: 'jit',
-  purge: [
+  content: [
     './js/**/*.js',
-    './css/**/*.css',
-    '../lib/*_web/**/*.*ex',
+    '../lib/*_web/**/*.*ex'
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
   },
-  variants: {
-    extend: {},
-  },
   plugins: [],
-};
+}
