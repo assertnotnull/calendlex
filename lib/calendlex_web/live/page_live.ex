@@ -1,8 +1,11 @@
 defmodule CalendlexWeb.PageLive do
   use CalendlexWeb, :live_view
 
-  @impl true
+  alias CalendlexWeb.Components.EventType
+
   def mount(_params, _session, socket) do
-    {:ok, socket}
+    event_types = Calendlex.available_event_types()
+
+    {:ok, assign(socket, event_types: event_types), temporary_assigns: [event_types: []]}
   end
 end
