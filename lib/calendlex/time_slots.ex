@@ -18,6 +18,7 @@ defmodule Calendlex.TimeSlots do
     |> Stream.take_while(&(DateTime.diff(to, &1) > 0))
     # Reject time slots overlapping booked events
     |> Stream.reject(&reject_overlaps(&1, date_events, duration))
+    |> Stream.reject(&Timex.before?(&1, Timex.now()))
     |> Enum.to_list()
   end
 
