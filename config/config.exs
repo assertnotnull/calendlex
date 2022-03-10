@@ -10,7 +10,8 @@ import Config
 config :calendlex,
   ecto_repos: [Calendlex.Repo],
   owner: %{
-    name: "Patrice"
+    name: "Patrice",
+    time_zone: "America/Toronto"
   }
 
 # Configures the endpoint
